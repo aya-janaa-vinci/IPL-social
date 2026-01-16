@@ -6,7 +6,8 @@ export class CheckEmail {
     if (parts.length !== 2) return false;
 
     if (email.includes(" ")) return false;
-    
+
+    if (!email.includes('.') || email.endsWith('.')) return false;
     return true;
   }
 }
