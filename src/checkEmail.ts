@@ -4,6 +4,8 @@ export class CheckEmail {
 
     const parts = email.split("@");
     if (parts.length !== 2) return false;
+
+    if (email.includes(" ")) return false;
     
     return true;
   }
