@@ -24,8 +24,13 @@ describe("CheckEmail", () => {
     expect(actual).toBe(false);
   });
 
-  it("should return false if domain has no dot", () => {
-      const actual = checker.validate("test@emailcom");
+  it("should return false if email has no dot", () => {
+    const actual = checker.validate("test@emailcom");
     expect(actual).toBe(false);
-    });
+  });
+
+  it("should return false if email ends with dot", () => {
+    const actual = checker.validate("test@email.com.");
+    expect(actual).toBe(false);
+  });
 });
