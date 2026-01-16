@@ -5,9 +5,16 @@ export class CheckEmail {
     const parts = email.split("@");
     if (parts.length !== 2) return false;
 
+    const [before, after] = parts;
+
     if (email.includes(" ")) return false;
 
-    if (!email.includes('.') || email.endsWith('.')) return false;
+    if (!after.includes(".") || after.endsWith(".")) return false;
+
+    if (!before || !after) return false;
+
     return true;
+
   }
+
 }
