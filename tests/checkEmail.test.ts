@@ -32,6 +32,10 @@ describe("CheckEmail", () => {
       const actual = checker.validate("@email.com");
       expect(actual).toBe(false);
     });
-    
+
+    it("should return false if no text after @", () => {
+      const actual = checker.validate("test@");
+      expect(actual).toBe(false);
+    });
   });
 });
