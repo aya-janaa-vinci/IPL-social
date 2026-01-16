@@ -37,5 +37,10 @@ describe("CheckEmail", () => {
       const actual = checker.validate("test@");
       expect(actual).toBe(false);
     });
+
+    it("should return true for valid email", () => {
+      const actual = checker.validate("test@email.com");
+      expect(actual).toBe(true);
+    });
   });
 });
